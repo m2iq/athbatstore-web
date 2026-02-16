@@ -6,7 +6,15 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/product/:id",
+      "destination": "/product/[id].html"
+    },
+    {
+      "source": "/category/:id",
+      "destination": "/category/[id].html"
+    },
+    {
+      "source": "/:path((?!_expo|_next|static|assets)[^\\.]+)$",
       "destination": "/index.html"
     }
   ],
