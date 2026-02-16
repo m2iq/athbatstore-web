@@ -19,7 +19,7 @@
       ]
     },
     {
-      "source": "/(.*\\\\.(js|css|json|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot|otf))",
+      "source": "/_expo/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
