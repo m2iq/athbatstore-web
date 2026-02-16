@@ -1,11 +1,12 @@
 {
+  "framework": null,
   "buildCommand": "npm run build:web",
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
