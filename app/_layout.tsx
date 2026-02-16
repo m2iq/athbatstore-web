@@ -1,8 +1,8 @@
 import { FontAwesome5, Ionicons, MaterialIcons } from "@expo/vector-icons";
 import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider as NavThemeProvider,
+    DarkTheme,
+    DefaultTheme,
+    ThemeProvider as NavThemeProvider,
 } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { Stack, useRouter, useSegments } from "expo-router";
@@ -13,8 +13,8 @@ import { AlertProvider } from "@/components/ui/custom-alert";
 import { ThemeProvider, useThemeControls } from "@/hooks/use-app-theme";
 import "@/i18n";
 import {
-  registerForPushNotifications,
-  setupNotificationListeners,
+    registerForPushNotifications,
+    setupNotificationListeners,
 } from "@/services/notifications";
 import { useAuthStore } from "@/stores/auth";
 import React, { useEffect } from "react";
@@ -152,7 +152,7 @@ export default function RootLayout() {
           ...Ionicons.font,
           ...FontAwesome5.font,
           ...MaterialIcons.font,
-        }
+        },
   );
 
   // Skip font loading check on web since we use CDN

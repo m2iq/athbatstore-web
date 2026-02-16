@@ -1,50 +1,162 @@
-/* Web-specific Icon Fonts Configuration */
+/* Load Icon Fonts - Use local fonts bundled by Expo */
 
-/* Ionicons - optimized for web */
+/* Ionicons */
 @font-face {
-  font-family: 'Ionicons';
-  src: url('https://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.woff2') format('woff2'),
-       url('https://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.woff') format('woff'),
-       url('https://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.ttf') format('truetype');
+  font-family: "Ionicons";
+  src: url("/_expo/static/fonts/Ionicons.ttf") format("truetype");
   font-display: block;
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Ionicons alternate source (unpkg) */
-@font-face {
-  font-family: 'Ionicons';
-  src: url('https://unpkg.com/ionicons@7/dist/fonts/ionicons.ttf') format('truetype');
-  font-display: block;
-  font-weight: normal;
-  font-style: normal;
-  unicode-range: U+F100-F9FF;
-}
-
-/* Material Icons - Google Fonts (official)  */
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
   font-weight: 400;
-  font-display: block;
-  src: url(https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+  font-style: normal;
 }
 
-/* FontAwesome 5 Free */
+/* Material Icons */
 @font-face {
-  font-family: 'Font Awesome 5 Free';
-  font-style: normal;
+  font-family: "MaterialIcons";
+  src: url("/_expo/static/fonts/MaterialIcons.ttf") format("truetype");
+  font-display: block;
   font-weight: 400;
+  font-style: normal;
+}
+
+/* Material Community Icons */
+@font-face {
+  font-family: "MaterialCommunityIcons";
+  src: url("/_expo/static/fonts/MaterialCommunityIcons.ttf")
+    format("truetype");
   font-display: block;
-  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-regular-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* FontAwesome 5 & 6 */
+@font-face {
+  font-family: "FontAwesome5_Brands";
+  src: url("/_expo/static/fonts/FontAwesome5_Brands.ttf") format("truetype");
+  font-display: block;
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Font Awesome 5 Free';
-  font-style: normal;
-  font-weight: 700;
+  font-family: "FontAwesome5_Regular";
+  src: url("/_expo/static/fonts/FontAwesome5_Regular.ttf") format("truetype");
   font-display: block;
-  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FontAwesome5_Solid";
+  src: url("/_expo/static/fonts/FontAwesome5_Solid.ttf") format("truetype");
+  font-display: block;
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* FontAwesome 6 */
+@font-face {
+  font-family: "FontAwesome6_Brands";
+  src: url("/_expo/static/fonts/FontAwesome6_Brands.ttf") format("truetype");
+  font-display: block;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FontAwesome6_Regular";
+  src: url("/_expo/static/fonts/FontAwesome6_Regular.ttf") format("truetype");
+  font-display: block;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FontAwesome6_Solid";
+  src: url("/_expo/static/fonts/FontAwesome6_Solid.ttf") format("truetype");
+  font-display: block;
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Others */
+@font-face {
+  font-family: "AntDesign";
+  src: url("/_expo/static/fonts/AntDesign.ttf") format("truetype");
+  font-display: block;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Entypo";
+  src: url("/_expo/static/fonts/Entypo.ttf") format("truetype");
+  font-display: block;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "EvilIcons";
+  src: url("/_expo/static/fonts/EvilIcons.ttf") format("truetype");
+  font-display: block;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Feather";
+  src: url("/_expo/static/fonts/Feather.ttf") format("truetype");
+  font-display: block;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FontAwesome";
+  src: url("/_expo/static/fonts/FontAwesome.ttf") format("truetype");
+  font-display: block;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fontisto";
+  src: url("/_expo/static/fonts/Fontisto.ttf") format("truetype");
+  font-display: block;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Foundation";
+  src: url("/_expo/static/fonts/Foundation.ttf") format("truetype");
+  font-display: block;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Octicons";
+  src: url("/_expo/static/fonts/Octicons.ttf") format("truetype");
+  font-display: block;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SimpleLineIcons";
+  src: url("/_expo/static/fonts/SimpleLineIcons.ttf") format("truetype");
+  font-display: block;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zocial";
+  src: url("/_expo/static/fonts/Zocial.ttf") format("truetype");
+  font-display: block;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* Ensure icons display properly */
@@ -55,4 +167,3 @@ i[class*="icon-"],
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
