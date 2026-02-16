@@ -21,8 +21,7 @@
 /* Material Community Icons */
 @font-face {
   font-family: "MaterialCommunityIcons";
-  src: url("/_expo/static/fonts/MaterialCommunityIcons.ttf")
-    format("truetype");
+  src: url("/_expo/static/fonts/MaterialCommunityIcons.ttf") format("truetype");
   font-display: block;
   font-weight: 400;
   font-style: normal;

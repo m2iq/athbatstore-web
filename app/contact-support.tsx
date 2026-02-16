@@ -26,7 +26,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 const SUPPORT_CHANNELS = [
   {
     key: "whatsapp",
-    icon: "logo-whatsapp" as const,
+    icon: "whatsapp" as const,
     color: "#25D366",
     darkColor: "#25D366",
     gradient: ["#25D366", "#128C7E"] as [string, string],
@@ -46,7 +46,7 @@ const SUPPORT_CHANNELS = [
   },
   {
     key: "tiktok",
-    icon: "logo-tiktok" as const,
+    icon: "tiktok" as const,
     color: "#000000",
     darkColor: "#FFFFFF",
     gradient: ["rgb(60,40,70)", "rgb(245,30,30)"] as [string, string],
