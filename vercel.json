@@ -4,15 +4,7 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/product/:id",
-      "destination": "/product/[id].html"
-    },
-    {
-      "source": "/category/:id",
-      "destination": "/category/[id].html"
-    },
-    {
-      "source": "/((?!_expo|assets|.*\\..*|robots\\.txt|sitemap\\.xml).*)",
+      "source": "/:path*",
       "destination": "/index.html"
     }
   ],
@@ -53,15 +45,6 @@
         {
           "key": "Access-Control-Allow-Origin",
           "value": "*"
-        }
-      ]
-    },
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
         }
       ]
     }

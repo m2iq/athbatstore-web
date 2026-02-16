@@ -184,7 +184,12 @@ export default function ContactSupportScreen() {
                       end={{ x: 1, y: 1 }}
                       style={styles.channelIconBg}
                     >
-                      <FontAwesome5 name={iconName} size={26} color="#fff" />
+                      <FontAwesome5
+                        name={iconName}
+                        size={26}
+                        color="#fff"
+                        style="brand"
+                      />
                     </LinearGradient>
                   ) : (
                     <View
@@ -197,6 +202,7 @@ export default function ContactSupportScreen() {
                         name={iconName}
                         size={26}
                         color={iconColor}
+                        style="brand"
                       />
                     </View>
                   )}
