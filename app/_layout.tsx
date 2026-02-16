@@ -20,6 +20,11 @@ import { useAuthStore } from "@/stores/auth";
 import React, { useEffect } from "react";
 import { ActivityIndicator, Platform, View } from "react-native";
 
+// Load fonts from CDN for web only
+if (Platform.OS === "web") {
+  require("./fonts.css");
+}
+
 export const unstable_settings = {
   anchor: "(tabs)",
 };
@@ -127,13 +132,18 @@ function RootNavigator() {
 }
 
 export default function RootLayout() {
-  const [fontsLoaded] = useFonts({
-    ...Ionicons.font,
-    ...FontAwesome5.font,
-    ...MaterialIcons.font,
-  });
+  const [fontsLoaded] = useFonts(
+    Platform.OS === "web"
+      ? {} // On web, fonts are loaded via CDN
+      : {
+          ...Ionicons.font,
+          ...FontAwesome5.font,
+          ...MaterialIcons.font,
+        }
+  );
 
-  if (!fontsLoaded) {
+  // Skip font loading check on web since we use CDN
+  if (!fontsLoaded && Platform.OS !== "web") {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <ActivityIndicator size="large" />
