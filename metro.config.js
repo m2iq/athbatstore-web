@@ -3,7 +3,7 @@ const { getDefaultConfig } = require("expo/metro-config");
 /** @type {import('expo/metro-config').MetroConfig} */
 const config = getDefaultConfig(__dirname);
 
-// Ensure fonts are treated as assets and copied correctly
+// For web, we need fonts as assets for Metro, but they'll be served from static folder
 config.resolver.assetExts.push(
   // Add font extensions
   "ttf",

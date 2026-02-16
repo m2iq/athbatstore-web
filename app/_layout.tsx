@@ -1,4 +1,3 @@
-import { FontAwesome5, Ionicons, MaterialIcons } from "@expo/vector-icons";
 import {
     DarkTheme,
     DefaultTheme,
@@ -20,22 +19,18 @@ import { useAuthStore } from "@/stores/auth";
 import React, { useEffect } from "react";
 import { ActivityIndicator, Platform, View } from "react-native";
 
-// Load fonts from CDN for web only
+// Only import vector icons on native platforms to avoid bundling fonts on web
+let FontAwesome5: any, Ionicons: any, MaterialIcons: any;
+if (Platform.OS !== "web") {
+  const icons = require("@expo/vector-icons");
+  FontAwesome5 = icons.FontAwesome5;
+  Ionicons = icons.Ionicons;
+  MaterialIcons = icons.MaterialIcons;
+}
+
+// Load fonts CSS for web
 if (Platform.OS === "web") {
   require("./fonts.css");
-  // Inject additional font loading styles for web
-  if (typeof document !== "undefined") {
-    const style = document.createElement("style");
-    style.innerHTML = `
-      * {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      }
-      [data-icon-set] {
-        font-family: Ionicons, MaterialIcons, MaterialCommunityIcons, FontAwesome5-Regular, FontAwesome5-Solid, FontAwesome5Brands-Regular, FontAwesome, AntDesign, Entypo, Feather, Fontisto, Foundation, Octicons, SimpleLineIcons, Zocial, sans-serif;
-      }
-    `;
-    document.head.appendChild(style);
-  }
 }
 
 export const unstable_settings = {
