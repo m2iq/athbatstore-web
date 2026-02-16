@@ -1,14 +1,7 @@
 /**
- * Post-build script: Copy font files from Metro's bundled output
- * to a clean path without 'node_modules' (which some hosts may filter).
- *
- * Metro bundles fonts to:
- *   dist/assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.<hash>.ttf
- *
- * This script copies them to:
- *   dist/_expo/static/fonts/Ionicons.ttf
- *
- * The fonts.css @font-face declarations reference the clean path.
+ * Post-build script: 
+ * 1. Copy font files from Metro's bundled output to a clean path
+ * 2. Create 404.html for SPA fallback (when direct file doesn't exist, Vercel serves 404.html)
  */
 
 const fs = require("fs");
@@ -25,16 +18,18 @@ const srcDir = path.join(
   "build",
   "vendor",
   "react-native-vector-icons",
-  "Fonts"
+  "Fonts",
 );
 
 const destDir = path.join(__dirname, "..", "dist", "_expo", "static", "fonts");
+const distDir = path.join(__dirname, "..", "dist");
 
 // Create destination directory
 if (!fs.existsSync(destDir)) {
   fs.mkdirSync(destDir, { recursive: true });
 }
 
+// 1. Copy fonts
 if (fs.existsSync(srcDir)) {
   const files = fs.readdirSync(srcDir).filter((f) => f.endsWith(".ttf"));
 
@@ -45,11 +40,27 @@ if (fs.existsSync(srcDir)) {
   }
 
   console.log(
-    `✅ Copied ${files.length} font files to dist/_expo/static/fonts/`
+    `✅ Copied ${files.length} font files to dist/_expo/static/fonts/`,
   );
 } else {
   console.warn("⚠️  Metro font source directory not found:", srcDir);
   console.warn(
-    "   Fonts will only be available via Metro's default asset paths."
+    "   Fonts will only be available via Metro's default asset paths.",
   );
+}
+
+// 2. Create 404.html for SPA fallback routing
+try {
+  const indexPath = path.join(distDir, "index.html");
+  const notFoundPath = path.join(distDir, "404.html");
+
+  if (fs.existsSync(indexPath)) {
+    const indexContent = fs.readFileSync(indexPath, "utf-8");
+    fs.writeFileSync(notFoundPath, indexContent);
+    console.log("✅ Created 404.html for SPA fallback routing");
+  } else {
+    console.warn("⚠️  index.html not found:", indexPath);
+  }
+} catch (err) {
+  console.error("❌ Error creating 404.html:", err.message);
 }

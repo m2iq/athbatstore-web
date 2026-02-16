@@ -2,19 +2,48 @@
   "framework": null,
   "buildCommand": "npm run build:web",
   "outputDirectory": "dist",
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
+  "headers": [
     {
-      "source": "/(.*).(cjs|mjs|js|css|ttf|woff|woff2|webp|png|jpg|jpeg|gif|svg|ico|map)",
-      "destination": "/$0"
+      "source": "/_expo/static/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Content-Type",
+          "value": "font/ttf"
+        }
+      ]
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/_expo/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
     }
-  ],
-  "headers": [
+  ]
+}
     {
       "source": "/_expo/static/fonts/(.*)",
       "headers": [
