@@ -6,15 +6,11 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/product/:id",
-      "destination": "/product/[id].html"
+      "source": "/(.*).(cjs|mjs|js|css|ttf|woff|woff2|webp|png|jpg|jpeg|gif|svg|ico|map)",
+      "destination": "/$0"
     },
     {
-      "source": "/category/:id",
-      "destination": "/category/[id].html"
-    },
-    {
-      "source": "/:path((?!_expo|_next|static|assets)[^\\.]+)$",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
