@@ -2,10 +2,6 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
-{
-  "outputDirectory": "dist",
-  "cleanUrls": true,
-  "trailingSlash": false,
   "rewrites": [
     {
       "source": "/product/:id",
@@ -70,4 +66,5 @@
       ]
     }
   ]
+}
 }
