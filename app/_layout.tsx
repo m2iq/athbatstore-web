@@ -23,7 +23,7 @@ import { ActivityIndicator, Platform, View } from "react-native";
 // Load fonts from CDN for web only
 if (Platform.OS === "web") {
   require("./fonts.css");
-  // Inject font loading styles directly
+  // Inject additional font loading styles for web
   if (typeof document !== "undefined") {
     const style = document.createElement("style");
     style.innerHTML = `
@@ -31,7 +31,7 @@ if (Platform.OS === "web") {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       }
       [data-icon-set] {
-        font-family: Ionicons, 'Material Icons', sans-serif;
+        font-family: Ionicons, MaterialIcons, MaterialCommunityIcons, FontAwesome5-Regular, FontAwesome5-Solid, FontAwesome5Brands-Regular, FontAwesome, AntDesign, Entypo, Feather, Fontisto, Foundation, Octicons, SimpleLineIcons, Zocial, sans-serif;
       }
     `;
     document.head.appendChild(style);

@@ -28,9 +28,9 @@
   font-style: normal;
 }
 
-/* FontAwesome 5 & 6 */
+/* FontAwesome 5 - with correct family names for React Native Web */
 @font-face {
-  font-family: "FontAwesome5_Brands";
+  font-family: "FontAwesome5Brands-Regular";
   src: url("/_expo/static/fonts/FontAwesome5_Brands.ttf") format("truetype");
   font-display: block;
   font-weight: 400;
@@ -38,7 +38,7 @@
 }
 
 @font-face {
-  font-family: "FontAwesome5_Regular";
+  font-family: "FontAwesome5Free-Regular";
   src: url("/_expo/static/fonts/FontAwesome5_Regular.ttf") format("truetype");
   font-display: block;
   font-weight: 400;
@@ -46,7 +46,32 @@
 }
 
 @font-face {
-  font-family: "FontAwesome5_Solid";
+  font-family: "FontAwesome5Free-Solid";
+  src: url("/_expo/static/fonts/FontAwesome5_Solid.ttf") format("truetype");
+  font-display: block;
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* FontAwesome 5 - alternate naming for compatibility */
+@font-face {
+  font-family: "FontAwesome5-Brands";
+  src: url("/_expo/static/fonts/FontAwesome5_Brands.ttf") format("truetype");
+  font-display: block;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FontAwesome5-Regular";
+  src: url("/_expo/static/fonts/FontAwesome5_Regular.ttf") format("truetype");
+  font-display: block;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FontAwesome5-Solid";
   src: url("/_expo/static/fonts/FontAwesome5_Solid.ttf") format("truetype");
   font-display: block;
   font-weight: 900;
