@@ -2,17 +2,21 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+{
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/api/:path*",
-      "destination": "https://api.example.com/:path*"
+      "source": "/product/:id",
+      "destination": "/product/[id].html"
     },
     {
-      "source": "/",
-      "destination": "/index.html"
+      "source": "/category/:id",
+      "destination": "/category/[id].html"
     },
     {
-      "source": "/:path((?!_expo|assets|favicon\\.ico|robots\\.txt).*)",
+      "source": "/((?!_expo|assets|.*\\..*|robots\\.txt|sitemap\\.xml).*)",
       "destination": "/index.html"
     }
   ],
