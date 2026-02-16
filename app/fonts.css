@@ -1,41 +1,58 @@
-/* Load Icon Fonts from CDN */
+/* Web-specific Icon Fonts Configuration */
 
-/* Ionicons */
+/* Ionicons - optimized for web */
 @font-face {
   font-family: 'Ionicons';
-  src: url('https://cdn.jsdelivr.net/npm/@expo/vector-icons@14/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf') format('truetype');
-  font-display: swap;
+  src: url('https://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.woff2') format('woff2'),
+       url('https://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.woff') format('woff'),
+       url('https://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.ttf') format('truetype');
+  font-display: block;
+  font-weight: normal;
+  font-style: normal;
 }
 
-/* Material Icons */
+/* Ionicons alternate source (unpkg) */
 @font-face {
-  font-family: 'MaterialIcons';
-  src: url('https://cdn.jsdelivr.net/npm/@expo/vector-icons@14/build/vendor/react-native-vector-icons/Fonts/MaterialIcons.ttf') format('truetype');
-  font-display: swap;
+  font-family: 'Ionicons';
+  src: url('https://unpkg.com/ionicons@7/dist/fonts/ionicons.ttf') format('truetype');
+  font-display: block;
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+F100-F9FF;
 }
 
-/* FontAwesome 5 */
+/* Material Icons - Google Fonts (official)  */
 @font-face {
-  font-family: 'FontAwesome5Free-Regular';
-  src: url('https://cdn.jsdelivr.net/npm/@expo/vector-icons@14/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf') format('truetype');
-  font-display: swap;
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+/* FontAwesome 5 Free */
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-regular-400.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'FontAwesome5Free-Solid';
-  src: url('https://cdn.jsdelivr.net/npm/@expo/vector-icons@14/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf') format('truetype');
-  font-display: swap;
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2') format('woff2');
 }
 
-@font-face {
-  font-family: 'FontAwesome5Brands';
-  src: url('https://cdn.jsdelivr.net/npm/@expo/vector-icons@14/build/vendor/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf') format('truetype');
-  font-display: swap;
+/* Ensure icons display properly */
+i[class*="icon-"],
+.icon {
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Material Community Icons */
-@font-face {
-  font-family: 'MaterialCommunityIcons';
-  src: url('https://cdn.jsdelivr.net/npm/@expo/vector-icons@14/build/vendor/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf') format('truetype');
-  font-display: swap;
-}

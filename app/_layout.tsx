@@ -23,6 +23,19 @@ import { ActivityIndicator, Platform, View } from "react-native";
 // Load fonts from CDN for web only
 if (Platform.OS === "web") {
   require("./fonts.css");
+  // Inject font loading styles directly
+  if (typeof document !== "undefined") {
+    const style = document.createElement("style");
+    style.innerHTML = `
+      * {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+      [data-icon-set] {
+        font-family: Ionicons, 'Material Icons', sans-serif;
+      }
+    `;
+    document.head.appendChild(style);
+  }
 }
 
 export const unstable_settings = {
