@@ -188,7 +188,7 @@ export default function ContactSupportScreen() {
                         name={iconName}
                         size={26}
                         color="#fff"
-                        style="brand"
+                        brand
                       />
                     </LinearGradient>
                   ) : (
@@ -202,7 +202,7 @@ export default function ContactSupportScreen() {
                         name={iconName}
                         size={26}
                         color={iconColor}
-                        style="brand"
+                        brand
                       />
                     </View>
                   )}

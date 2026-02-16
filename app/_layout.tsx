@@ -1,3 +1,4 @@
+import { FontAwesome5, Ionicons, MaterialIcons } from "@expo/vector-icons";
 import {
     DarkTheme,
     DefaultTheme,
@@ -19,16 +20,7 @@ import { useAuthStore } from "@/stores/auth";
 import React, { useEffect } from "react";
 import { ActivityIndicator, Platform, View } from "react-native";
 
-// Only import vector icons on native platforms to avoid bundling fonts on web
-let FontAwesome5: any, Ionicons: any, MaterialIcons: any;
-if (Platform.OS !== "web") {
-  const icons = require("@expo/vector-icons");
-  FontAwesome5 = icons.FontAwesome5;
-  Ionicons = icons.Ionicons;
-  MaterialIcons = icons.MaterialIcons;
-}
-
-// Load fonts CSS for web
+// Load fonts CSS for web (provides @font-face declarations as fallback)
 if (Platform.OS === "web") {
   require("./fonts.css");
 }
